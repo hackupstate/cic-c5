@@ -1,0 +1,21 @@
+h1 {
+	background: pink;
+	border: 5px solid red;
+	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+	height: 200px;
+	text-align: center;
+}
+
+h2 {
+	border: 5px solid blue;
+	padding-left: 15px;
+	margin: 0;
+}
+
+#thirdH2 {
+	border: 1px dashed red;
+}
+
+.spaceAtTheTop {
+	padding-top: 50px;
+}

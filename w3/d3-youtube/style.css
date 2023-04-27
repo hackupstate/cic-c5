@@ -1,0 +1,81 @@
+#logo {
+	display: inline;
+	margin-left: 20px;
+	font-family: "Kanit", sans-serif;
+	font-size: 24px;
+	vertical-align: super;
+}
+
+#navbar {
+	border-bottom: 1px solid gray;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#menu {
+	padding: 10px;
+}
+
+.buttonHover:hover {
+	background: lightgray;
+	border-radius: 100px;
+	cursor: pointer;
+}
+
+#searchInputCol {
+	border: 1px solid lightgray;
+	border-radius: 30px;
+	padding-top: 3px;
+	height: 100%;
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 10px;
+}
+
+#searchInputCol .material-symbols-outlined {
+	vertical-align: sub;
+}
+
+#searchInputCol input {
+	width: calc(100% - 100px);
+	border: none;
+	height: 100%;
+	outline: none;
+}
+
+#searchButton {
+	display: inline-block;
+	height: 40px;
+	/* border-left: 1px solid gray; */
+}
+
+#navIcons span {
+	padding: 10px;
+}
+
+video {
+	width: 100%;
+}
+
+#mainVideoCol h5 {
+	margin-top: 5px;
+}
+
+.container-fluid {
+	font-family: "Roboto", sans-serif;
+}
+
+.circle {
+	border-radius: 100px;
+}
+
+.artist {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.sub {
+	font-size: 12px;
+	color: gray;
+}

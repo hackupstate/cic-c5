@@ -1,0 +1,33 @@
+#topBar {
+	background: navy;
+	color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#linksBar{
+	text-align: center;
+	border-bottom: 1px solid gray;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#linksBar span {
+	margin-left: 10px;
+	margin-right: 10px;
+} 
+
+#activeLink {
+	font-weight: bold;
+	border-bottom: 5px solid orange;
+	padding-bottom: 8px;
+}
+
+#leftCol {
+	border-right: 1px solid lightgray;
+	min-height: calc(100vh - 24px - 30px - 45px);
+}
+
+#rightCol{
+	border-left: 1px solid lightgray;
+}
