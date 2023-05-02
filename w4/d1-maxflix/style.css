@@ -1,0 +1,87 @@
+body {
+	background: black;
+	color: white;
+}
+
+#nav {
+	padding: 5px;
+}
+
+#linksBar span,
+#navIcons span {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#headlineContent {
+	background-image: url("img/cover.jpg");
+	min-height: 550px;
+	/* background-repeat: no-repeat; */
+	background-size: cover;
+}
+
+#seriesRow {
+	margin-top: 150px;
+	color: darkgray;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 5px;
+}
+
+#seriesRow img {
+	height: 25px;
+}
+
+#showName {
+	font-family: "Cabin", sans-serif;
+	font-size: 56px;
+	text-transform: uppercase;
+	text-shadow: 2px 2px black;
+}
+
+#trendingStatus img {
+	width: 25px;
+	margin-right: 10px;
+}
+
+#trendingStatus {
+	font-weight: bold;
+	text-shadow: 1px 1px black;
+}
+
+#headlineContent p {
+	margin-top: 10px;
+}
+
+#play {
+	background: white;
+	color: black;
+	border: none;
+	font-weight: 500;
+	padding: 5px 20px 5px 20px;
+	border-radius: 5px;
+}
+
+#moreInfo {
+	border: none;
+	border-radius: 2px;
+	color: white;
+	font-weight: 500;
+	background: rgba(120, 120, 120, 0.8);
+	padding: 5px 20px 5px 20px;
+}
+
+#buttonRow span {
+	vertical-align: sub;
+	margin-right: 7px;
+}
+
+#ratingCol {
+	margin-top: 310px;
+}
+
+#rating {
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 5px 20px 5px 20px;
+	border-left: 2px solid white;
+}
