@@ -1,0 +1,30 @@
+body {
+	background-color: #01161e;
+}
+
+#intro {
+	color: white;
+	height: 100vh;
+}
+
+#intro h1 {
+	font-size: 96px;
+}
+
+#intro code {
+	font-size: 1.75rem;
+}
+
+#arrowDown {
+	color: lightblue;
+	font-size: 75px;
+	position: absolute;
+	bottom: 30px;
+	left: calc(50% - 37.5px);
+}
+
+#about {
+	color: white;
+	background: #124559;
+	padding: 30px;
+}

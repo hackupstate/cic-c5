@@ -85,3 +85,22 @@ body {
 	padding: 5px 20px 5px 20px;
 	border-left: 2px solid white;
 }
+
+#screenSizeMessage {
+	display: none;
+}
+
+@media only screen and (max-width: 702px), (min-width: 1200px) {
+	#screenSizeMessage {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100vh;
+		text-align: center;
+		padding: 20px;
+	}
+
+	.container-fluid {
+		display: none;
+	}
+}
