@@ -27,10 +27,10 @@ const school = {
 	},
 };
 
-//#7 Log out the second teachers name at the elementary school (:onion:)
+//#7 Log out the second teachers name at the elementary school (🧅)
 
-//#8 Log out all the students names of the middle school teacher using a loop (:onion::repeat:)
+//#8 Log out all the students names of the middle school teacher using a loop (🧅🔁)
 
-//#9 Find the average score of all three teachers in the elementary school. (HARD!)
+//#9 Find the average score of all three teachers in the elementary school. (HARDEST!)
 
 //#10 Make a function that converts fahrenheit to celsius. Make sure to call the function and log the output.
