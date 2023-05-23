@@ -28,6 +28,7 @@ const school = {
 };
 
 //#7 Log out the second teachers name at the elementary school (🧅)
+console.log(school.elementary.teachers[2].name);
 
 //#8 Log out all the students names of the middle school teacher using a loop (🧅🔁)
 
