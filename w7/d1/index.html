@@ -8,9 +8,24 @@
 	</head>
 	<body>
 		<h1>To Do List App</h1>
-		<input id="inputtedText" type="text" placeholder="Item to add" />
+		<!-- #1 Make a new input for the task text -->
 		<button onclick="addItem(event)">Add item</button>
-		<div id="listItems"></div>
+		<input
+			id="inputtedText"
+			type="text"
+			placeholder="Item to add"
+			onkeydown="keyPressed(event)"
+		/>
+		<!-- #2 Added a button that triggers addItem function in JS on click -->
+		<button onclick="addItem(event)">Add item</button>
+		<!-- #8 Make sure listItems div exists so JS has a place to put our list -->
+		<ul id="listItems"></ul>
+		<!-- Example list that I want to dymanically generate in our HTML -->
+		<!-- <ul>
+			<li>Item #1</li>
+			<li>Test #2</li>
+		</ul> -->
+		<!-- #4 index.html now knows our JS exists and can run it -->
 		<script src="script.js"></script>
 	</body>
 </html>
