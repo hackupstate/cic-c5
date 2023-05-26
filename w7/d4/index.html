@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<input
+			oninput="selectChanged(event)"
+			type="text"
+			placeholder="Name"
+			id="nameField"
+		/>
+		<select onchange="selectChanged(event)">
+			<option>Student</option>
+			<option>Teacher</option>
+		</select>
+		<button onclick="logValues(event)">Log values</button>
+		<script>
+			const logValues = (event) => {
+				const carNum = document.getElementById("nameField");
+				// nameField.style.border = "5px solid red";
+				console.log(cars[carNum.value]);
+				console.log(event);
+			};
+
+			const selectChanged = (thingTheUserDid) => {
+				console.log(thingTheUserDid.target.value);
+			};
+			const cars = [
+				{ make: "Toyota", year: 2023 },
+				{ make: "Tesla", year: 2022 },
+			];
+			const weather = {
+				raining: true,
+				chanceOfRain: [30, 90, 20],
+			};
+
+			const carToGet = 1;
+			const toGet = "year";
+			console.log(cars[carToGet][toGet]);
+
+			for (const object of cars) {
+				console.log(object.make);
+			}
+
+			console.log(cars);
+		</script>
+	</body>
+</html>

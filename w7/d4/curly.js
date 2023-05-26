@@ -25,3 +25,10 @@ console.log(car.make);
 const thingyToGet = "model";
 console.log(car["make"]);
 console.log(car[thingyToGet]);
+
+let todo = ["finish playground", "start movies"];
+
+console.log(todo);
+todo.push("New item at end");
+
+console.log(todo);
