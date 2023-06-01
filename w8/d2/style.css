@@ -6,7 +6,3 @@ body {
 #seats > div > span:nth-child(7) {
 	margin-left: 20px;
 }
-
-.selected {
-	color: blue;
-}
