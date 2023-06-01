@@ -1,0 +1,12 @@
+body {
+	text-align: center;
+}
+
+#seats > div > span:nth-child(3),
+#seats > div > span:nth-child(7) {
+	margin-left: 20px;
+}
+
+.selected {
+	color: blue;
+}
