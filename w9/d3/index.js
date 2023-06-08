@@ -1,0 +1,45 @@
+const postJSON = window.localStorage.getItem("posts");
+const posts = JSON.parse(postJSON);
+const postsDiv = document.getElementById("posts");
+
+let generatedHTML = "";
+
+for (const post of posts) {
+	generatedHTML += `<div class="col-4">
+	<div class="card">
+		<div class="card-body">
+			<h5 class="card-title">${post.title}</h5>
+			<div class="card-text">
+				<div class="author">by ${post.author}</div>
+				<div class="timestamp">${new Date(post.timestamp).toLocaleTimeString()}</div>
+				<p>
+					${post.content.slice(0, 100)}${post.content.length > 100 ? "..." : ""}
+				</p>
+			</div>
+			<a href="read.html?timestamp=${
+				post.timestamp
+			}" class="btn btn-primary">Read more</a>
+		</div>
+	</div>
+	<!-- end of my card-->
+	</div>`;
+}
+
+postsDiv.innerHTML = generatedHTML;
+
+if (window.localStorage.isLoggedIn === "true") {
+	document.getElementById(
+		"actionLinks"
+	).innerHTML = `<a href="newPost.html">New Post</a> | <a onclick="logout(event)" id="logout">Logout</a>`;
+} else {
+	document.getElementById(
+		"actionLinks"
+	).innerHTML = `<a href="login.html">Login</a>`;
+}
+
+const logout = (event) => {
+	window.localStorage.removeItem("isLoggedIn");
+	document.getElementById(
+		"actionLinks"
+	).innerHTML = `<a href="login.html">Login</a>`;
+};
