@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+	const [inputValue, setInputValue] = useState("");
 	const cars = [
 		{ make: "Toyota", model: "Rav4" },
 		{ make: "Tesla", model: "Y" },
@@ -12,9 +14,24 @@ function App() {
 		return num1 + num2;
 	};
 
+	const formSubmitted = (event) => {
+		// const inputText = event.target.elements.inputName.value;
+		console.log(inputValue);
+	};
+
 	return (
 		<div className="App">
 			<h1>Welcome to React!</h1>
+			<form onSubmit={formSubmitted}>
+				<input
+					type="text"
+					name="inputName"
+					value={inputValue}
+					onChange={(evt) => {
+						setInputValue(event.target.value);
+					}}
+				/>
+			</form>
 			<ul>
 				{cars.map((car) => {
 					console.log(car);
