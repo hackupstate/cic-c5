@@ -8,6 +8,10 @@ header {
 	height: calc(100vh - 130px);
 }
 
+#messages .row {
+	margin-bottom: 10px;
+}
+
 .messageText {
 	background: blue;
 	color: white;
@@ -18,4 +22,10 @@ header {
 .receivedMessage {
 	background-color: lightgray;
 	color: black;
+}
+
+.reactLink {
+	font-size: 10px;
+	color: blue;
+	cursor: pointer;
 }

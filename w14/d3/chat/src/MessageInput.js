@@ -1,10 +1,31 @@
 import { useState } from "react";
 
-const MessageInput = () => {
+const MessageInput = (props) => {
 	const [inputtedText, setInputtedText] = useState("");
 	const sendMessage = (event) => {
 		event.preventDefault();
 		console.log(inputtedText);
+
+		let newMessages = [
+			...props.existingMessages,
+			{ content: inputtedText, sent: true, timestamp: new Date() },
+		];
+
+		props.setMessages(newMessages);
+
+		setInputtedText("");
+
+		setTimeout(() => {
+			props.setMessages([
+				...newMessages,
+				{
+					content:
+						"Hmm. Good message. This is the computer responding.",
+					sent: false,
+					timestamp: new Date(),
+				},
+			]);
+		}, 3000);
 	};
 
 	return (
