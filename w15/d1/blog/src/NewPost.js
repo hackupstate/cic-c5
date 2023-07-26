@@ -32,8 +32,6 @@ const NewPost = () => {
 		window.location = "/";
 	};
 
-	const [title, setTitle] = useState("");
-
 	return (
 		<div className="container">
 			<h1>New Post</h1>
