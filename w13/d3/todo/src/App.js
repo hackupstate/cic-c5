@@ -1,5 +1,5 @@
 //#2A Import useState from react so we can use in #2B
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 //#1 App where the entire react project starts
@@ -8,6 +8,12 @@ const App = () => {
 	//useState (a concept built into react) and items starts out as an empty array
 	const [items, setItems] = useState([]);
 	const [itemText, setItemText] = useState("");
+
+	const [tasks, setTasks] = useState([]);
+
+	// useEffect(() => {
+	// 	console.log(tasks);
+	// }, [tasks]);
 
 	// #5B Runs when the form is submitted
 	const addItem = (event) => {
@@ -24,6 +30,13 @@ const App = () => {
 		//not only the name, but also whether it is done or not
 		setItems([...items, { taskName: itemText, done: false }]);
 		setItemText("");
+
+		// if (!tasks.includes(itemText)) {
+		// setTasks([...tasks, itemText]);
+		// }
+
+		// setTasks([...new Set([...tasks, itemText])]);
+
 		console.log(items);
 	};
 
