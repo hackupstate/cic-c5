@@ -1,0 +1,19 @@
+.messageText {
+	background-color: blue;
+	color: white;
+	padding: 7px;
+	border-radius: 30px;
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+.sentMessageText {
+	background-color: lightgray;
+	color: black;
+}
+
+#messagesList {
+	height: calc(100vh - 110px);
+}
