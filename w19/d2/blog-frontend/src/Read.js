@@ -84,7 +84,7 @@ const Read = () => {
 			<hr />
 			{post.comments.map((comment) => {
 				return (
-					<div>
+					<div key={comment.id}>
 						<h6>{comment.author}</h6>
 						<p>{comment.content}</p>
 					</div>

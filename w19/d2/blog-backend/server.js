@@ -3,6 +3,7 @@ import express from "express";
 import cors from "cors";
 // 2 (through 16) Imports sequelize setup
 import { db, Post, Comment } from "./db/db.js";
+import { Op } from "sequelize";
 
 //17 Setup express server to parse json body and allow CORS
 const server = express();
@@ -48,6 +49,15 @@ server.post("/comment", async (req, res) => {
 	await Comment.create(req.body);
 	res.send({
 		comments: await Comment.findAll({ where: { postID: req.body.postID } }),
+	});
+});
+
+server.post("/postsSearch", async (req, res) => {
+	console.log(req.body.query);
+	res.send({
+		posts: await Post.findAll({
+			where: { title: { [Op.iLike]: `%${req.body.query}%` } },
+		}),
 	});
 });
 

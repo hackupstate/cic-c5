@@ -21,9 +21,38 @@ const Home = () => {
 		makeAPICall();
 	}, []);
 
+	const searchPosts = async (event) => {
+		event.preventDefault();
+		const response = await fetch(`${APIURL}/postsSearch`, {
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				query: event.target.elements.searchInput.value,
+			}),
+			method: "POST",
+		});
+		//25 Parse the data
+		const data = await response.json();
+		//26 Use the data to set that into state
+		setPosts(data.posts);
+		// console.log(data.posts);
+	};
+
 	return (
 		<div>
 			{/* Remove container div & h1 */}
+
+			<form onSubmit={searchPosts}>
+				<input
+					type="text"
+					id="searchInput"
+					className="form-control"
+				></input>
+				<button type="submit" className="form-control">
+					Search
+				</button>
+			</form>
 
 			<div id="posts" className="row">
 				{!posts ? (

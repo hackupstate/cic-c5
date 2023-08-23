@@ -5,7 +5,9 @@ import PostModel from "./Post.js";
 import CommentModel from "./Comment.js";
 
 // 8 Use the sequelize import from #3 to connect to the blog database
-const db = new Sequelize("postgres://hackupstate@localhost:5432/blog");
+const db = new Sequelize("postgres://hackupstate@localhost:5432/blog", {
+	logging: false,
+});
 
 // 9 Give the post access to the db from 8 through 4
 const Post = PostModel(db);
