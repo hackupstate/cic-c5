@@ -2,7 +2,7 @@
 import express from "express";
 import cors from "cors";
 // 2 (through 16) Imports sequelize setup
-import { db, Post, Comment } from "./db/db.js";
+import { db, Post, Comment, CommentReply } from "./db/db.js";
 import { Op } from "sequelize";
 import multer from "multer";
 
@@ -51,9 +51,23 @@ server.get("/post/:id", async (req, res) => {
 	res.send({
 		post: await Post.findOne({
 			where: { id: req.params.id },
-			include: [Comment],
+			include: [{ model: Comment, include: CommentReply }],
 		}),
 	});
+});
+
+server.delete("/commentReply/:id", async (req, res) => {
+	await CommentReply.destroy({ where: { id: req.params.id } });
+	res.send();
+});
+
+server.post("/commentReply/:commentID", async (req, res) => {
+	console.log(req.params.commentID, req.body.text);
+	await CommentReply.create({
+		content: req.body.text,
+		commentID: req.params.commentID,
+	});
+	res.send();
 });
 
 server.delete("/post/:id", async (req, res) => {

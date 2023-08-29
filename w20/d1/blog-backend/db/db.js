@@ -3,6 +3,7 @@ import Sequelize from "sequelize";
 // 4 (through 7) Gets post model
 import PostModel from "./Post.js";
 import CommentModel from "./Comment.js";
+import CommentReplyModel from "./CommentReply.js";
 
 // 8 Use the sequelize import from #3 to connect to the blog database
 const db = new Sequelize("postgres://hackupstate@localhost:5432/blog", {
@@ -12,6 +13,7 @@ const db = new Sequelize("postgres://hackupstate@localhost:5432/blog", {
 // 9 Give the post access to the db from 8 through 4
 const Post = PostModel(db);
 const Comment = CommentModel(db);
+const CommentReply = CommentReplyModel(db);
 
 //11 connect to db
 const connectToDB = async () => {
@@ -23,6 +25,7 @@ const connectToDB = async () => {
 
 		// Comment.belongsTo(Post, { foreignKey: "postID" });
 		Post.hasMany(Comment, { foreignKey: "postID" });
+		Comment.hasMany(CommentReply, { foreignKey: "commentID" });
 
 		//14 Sync the models with the tables in the DB
 		db.sync();
@@ -37,4 +40,4 @@ const connectToDB = async () => {
 connectToDB();
 
 //16 Export out the model and DB so we can access it in server.js
-export { db, Post, Comment };
+export { db, Post, Comment, CommentReply };

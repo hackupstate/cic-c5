@@ -12,18 +12,18 @@ const Read = () => {
 
 	// console.log(timestamp);
 
+	const makeAPICall = async () => {
+		//33 When the page loads make an API call to get the specific ID from the DB
+		const response = await fetch(`${APIURL}/post/${id}`);
+		// 35 Parses data from #34 on backend
+		const data = await response.json();
+		//36 Sets into state
+		setPost(data.post);
+
+		console.log(data.post);
+	};
+
 	useEffect(() => {
-		const makeAPICall = async () => {
-			//33 When the page loads make an API call to get the specific ID from the DB
-			const response = await fetch(`${APIURL}/post/${id}`);
-			// 35 Parses data from #34 on backend
-			const data = await response.json();
-			//36 Sets into state
-			setPost(data.post);
-
-			console.log(data.post);
-		};
-
 		makeAPICall();
 	}, [id]);
 
@@ -92,6 +92,7 @@ const Read = () => {
 			</form>
 			<hr />
 			{post.comments.map((comment) => {
+				console.log(comment);
 				return (
 					<div key={comment.id}>
 						<h6>{comment.author}</h6>
@@ -100,6 +101,60 @@ const Read = () => {
 							style={{ height: 100 }}
 						/>
 						<p>{comment.content}</p>
+						<ul>
+							{comment.commentReplies.map((reply) => {
+								return (
+									<li key={reply.id}>
+										{reply.content}{" "}
+										<span
+											style={{
+												color: "red",
+												textDecoration: "underline",
+												cursor: "pointer",
+											}}
+											onClick={async () => {
+												await fetch(
+													`${APIURL}/commentReply/${reply.id}`,
+													{
+														method: "DELETE",
+													}
+												);
+
+												makeAPICall();
+											}}
+										>
+											Delete
+										</span>
+									</li>
+								);
+							})}
+						</ul>
+						<form
+							onSubmit={async (event) => {
+								event.preventDefault();
+								const response = await fetch(
+									`${APIURL}/commentReply/${comment.id}`,
+									{
+										headers: {
+											"Content-Type": "application/json",
+										},
+										method: "POST",
+										body: JSON.stringify({
+											text: event.target.elements
+												.replyText.value,
+										}),
+									}
+								);
+
+								makeAPICall();
+							}}
+						>
+							<input type="text" id="replyText" />
+							<button className="btn btn-primary" type="submit">
+								Reply
+							</button>
+						</form>
+						<hr />
 					</div>
 				);
 			})}
