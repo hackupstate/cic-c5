@@ -160,6 +160,7 @@ server.delete("/post/:id", async (req, res) => {
 
 server.post("/comment", validateUserTokenMiddleware, async (req, res) => {
 	await Comment.create(req.body);
+	console.log(req.body);
 	res.send({
 		comments: await Comment.findAll({
 			where: { postID: req.body.postID },

@@ -45,8 +45,8 @@ const Read = () => {
 		const response = await fetch(`${APIURL}/comment`, {
 			method: "POST",
 			headers: {
-				Authorization: `Bearer ${token}`,
 				"Content-Type": "application/json",
+				Authorization: `Bearer ${token}`,
 			},
 			body: JSON.stringify({
 				author: event.target.elements.author.value,
@@ -56,6 +56,7 @@ const Read = () => {
 		});
 
 		const data = await response.json();
+		console.log(data);
 		setPost({ ...post, comments: data.comments });
 	};
 
