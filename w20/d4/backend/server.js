@@ -1,6 +1,9 @@
 import express from "express";
 import cors from "cors";
 import { db, Shoes, Ocassions } from "./db.js";
+import sgMail from "@sendgrid/mail";
+import sendGridAPIKey from "./sendGridAPIKey.js";
+sgMail.setApiKey(sendGridAPIKey);
 
 const server = express();
 server.use(cors());
@@ -27,6 +30,22 @@ server.post("/shoes", async (req, res) => {
 		});
 	}
 	res.send();
+});
+
+server.post("/contactForm", async (req, res) => {
+	console.log(req.body);
+	const msg = {
+		to: "maxm@hackupstate.com",
+		from: "max@zane.tech",
+		subject: "New contact form submitted",
+		html: `Name: ${req.body.name}<br/>
+Email: ${req.body.email}<br/>
+Message:${req.body.message}`,
+	};
+
+	await sgMail.send(msg);
+
+	res.send({});
 });
 
 server.listen(3080, () => {

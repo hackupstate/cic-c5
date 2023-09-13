@@ -1,0 +1,12 @@
+Goal: A user can fill out a contact form that will send an email to me with the contents
+
+1) Frontend: make contact form ✅
+2) Frontend: connect form onSubmit ✅
+3) Frontend: make a fetch to our backend including the form info ✅
+4) Backend: make a new endpoint to recieve the req coming from the fetch from #3 ✅
+5) Set up sendgrid domain ✅
+6) Install sendgrid package ✅
+7) Read sendgrid npm docs to figure out how to send email ✅
+8) Configure sengrid so we can send email in request  ✅
+9) Backend: send email
+10) Update frontend to say email was sent.
