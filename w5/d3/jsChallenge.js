@@ -33,4 +33,5 @@ const school = {
 
 //#9 Find the average score of all three teachers in the elementary school. (HARDEST!)
 
-//#10 Make a function that converts fahrenheit to celsius. Make sure to call the function and log the output.
+//#10 Make a function that squares a number (multiplies it by itself).
+//    Make sure to call the function and log the output.
