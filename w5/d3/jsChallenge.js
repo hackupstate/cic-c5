@@ -8,7 +8,7 @@
 
 //#5 Write a single line and multi line comment below this one.
 
-//#6 Create an object with that has at least two different data types for the values
+//#6 Create an object that has at least two different data types for the values
 
 //Use this object for #7-10 below
 const school = {
